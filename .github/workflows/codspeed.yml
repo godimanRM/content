@@ -24,7 +24,9 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version-file: ".nvmrc"
+          # vitest 4 requires Node 20+, so we pin a compatible version here
+          # instead of inheriting the older version from .nvmrc.
+          node-version: "20"
           cache: yarn
 
       - name: yarn install
