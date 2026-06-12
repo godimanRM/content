@@ -35,7 +35,8 @@
     "start": "yarn up-to-date-check && env-cmd --silent cross-env CONTENT_ROOT=files REACT_APP_DISABLE_AUTH=true BUILD_OUT_ROOT=build yari-server",
     "up-to-date-check": "node scripts/up-to-date-check.js",
     "jest": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
-    "test:front-matter-linter": "yarn jest tests"
+    "test:front-matter-linter": "yarn jest tests",
+    "bench": "vitest bench --run"
   },
   "dependencies": {
     "@apideck/better-ajv-errors": "^0.3.6",
@@ -58,6 +59,8 @@
     "prettier": "3.1.0"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@codspeed/vitest-plugin": "^5.5.0",
+    "jest": "^29.7.0",
+    "vitest": "^4.1.8"
   }
 }
